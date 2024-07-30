@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pan card validation</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            height: 100vh;
+            justify-content: center;
+        }
+        input{
+            width: 90%;
+            margin: 10px;
+            height: 40px;
+            font-size: 25px;
+        }
+        label{
+            font-size: 30px;
+        }
+        button{
+            height: 50px;
+            width: 80px;
+            font-size: 20px;
+            background-color: greenyellow;
+            margin: 10px;
+            align-self: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="width: 35%; background-color: aqua;">
+        <label>Enter PAN number:</label>
+        <input>
+        <button onclick="verification()">Verify</button>
+    </div>
+<script>
+    let main = /^[A-Z]{5}[0-9]{4}[A-Z]$/;
+    function verification(){
+        let name = document.getElementsByTagName("input")[0];
+        let value = name.value;
+        if(main.test(value)){
+            alert("Valid PAN");
+            value = "";
+        }
+        else{
+            alert("Invalid PAN");
+            value = "";
+        }
+    }
+</script>
+</body>
+</html>
